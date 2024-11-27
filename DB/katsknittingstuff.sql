@@ -25,9 +25,9 @@ CREATE TABLE IF NOT EXISTS `needlesandhooks` (
   `material` VARCHAR(45) NULL,
   `type` VARCHAR(45) NOT NULL,
   `length` DECIMAL NOT NULL,
-  `US_size` VARCHAR(15) NOT NULL,
-  `Metric_size` VARCHAR(15) NOT NULL,
-  `quantity` INT NOT NULL,
+  `US_size` VARCHAR(15) NULL,
+  `Metric_size` VARCHAR(15) NULL,
+  `quantity` INT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -37,10 +37,18 @@ SET SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DAT
 CREATE USER 'kat'@'localhost' IDENTIFIED BY 'kat';
 
 GRANT SELECT, INSERT, TRIGGER, UPDATE, DELETE ON TABLE * TO 'kat'@'localhost';
-GRANT ALL ON * TO 'kat'@'localhost';
-GRANT SELECT ON TABLE * TO 'kat'@'localhost';
-GRANT SELECT, INSERT, TRIGGER ON TABLE * TO 'kat'@'localhost';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- -----------------------------------------------------
+-- Data for table `needlesandhooks`
+-- -----------------------------------------------------
+START TRANSACTION;
+USE `katsknittingstuff`;
+INSERT INTO `needlesandhooks` (`id`, `material`, `type`, `length`, `US_size`, `Metric_size`, `quantity`) VALUES (1, 'metal', 'interchangeable', 3.5, '10.5', '226.5', 1);
+INSERT INTO `needlesandhooks` (`id`, `material`, `type`, `length`, `US_size`, `Metric_size`, `quantity`) VALUES (2, 'plastic', 'cable', 45, NULL, NULL, 1);
+
+COMMIT;
+
