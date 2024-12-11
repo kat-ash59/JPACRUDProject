@@ -41,7 +41,7 @@ body {
 		<br>
 		<br>
 			<form action="getNeedleOrHookById.do" method="GET">
-	 		 Needle ID: <input type="text" name="needleOrHook" />
+	 		 Needle ID: <input type="number" name="needleOrHook" />
 	  		<input type="submit" value="Show Needle, Hook or Cable" />
 		</form>
 		<br>
@@ -100,7 +100,7 @@ body {
 				<input type="text" id="metricSize" name="metricSize" value=""/>
 				<br>
 				<label for="type">Quantity</label><br>
-				<input type="text" id="quantity" name="quantity" value="0"/>
+				<input type="number" id="quantity" name="quantity" value="0"/>
 				<br>
 				<br>
 				<input type="submit" value="Add the Needle, Hook or Cable information into the Database">

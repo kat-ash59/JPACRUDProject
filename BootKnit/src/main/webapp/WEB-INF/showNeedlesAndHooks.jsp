@@ -11,7 +11,7 @@
 <%@  include file="bootstraphead.jsp" %>
 <style>
 body { 
-	background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+	background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
                   url("images/allknittingcrochetstuff.jpg");
 }
 </style>

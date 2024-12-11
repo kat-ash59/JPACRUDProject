@@ -70,7 +70,7 @@ body {
 				<br>
 				Current Quantity: ${needleOrHook.quantity}
 				<label for="type">Quantity</label><br>
-				<input type="text" id="quantity" name="quantity" value="0"/><br>
+				<input type="number" id="quantity" name="quantity" value="0"/><br>
 				<br>
 				<input type="submit" value="Update the Needle, Hook or Cable information in the Database">
 			</form>
