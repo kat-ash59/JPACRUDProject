@@ -8,12 +8,8 @@
 <meta charset="UTF-8">
 
 <title>Kat's Knitting Stuff</title>
+<%@  include file="bootstraphead.jsp" %>
 <style >
-<%--
-<link  rel="stylesheet"  type="text/css" href="mapPage.css">
-
-<link rel="stylesheet" href="css/mapPage.css">
---%>
 body { 
 	background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)),
                   url("images/knit.png");

@@ -176,55 +176,53 @@ public class KnitController
 	}  // end delete needle, hook or cable
 	
 	@GetMapping(path="createNeedleHookOrCable.do")
-	public ModelAndView addNewHooksNeedlesOrCables(@RequestParam("material") String material,
-													@RequestParam("type") String type,
-													@RequestParam("length") double length,
-													@RequestParam("usSize") String usSize,
-													@RequestParam("metricSize") String metricSize,
-													@RequestParam("quantity") int quantity)
+	public ModelAndView addNewHooksNeedlesOrCables(NeedlesAndHooks theNeedle)
 	{
 		ModelAndView mv = new ModelAndView();
 		Boolean successfulUpdate = false;
-		NeedlesAndHooks theNeedle = new NeedlesAndHooks();
+		NeedlesAndHooks needle = new NeedlesAndHooks();
 		NeedlesAndHooks theNewNeedle = null;
 		
 		try
 		{
 
 			
-			if ((material != null) && (!material.isEmpty()) || (!material.isBlank()))
+			if ((theNeedle.getMaterial() != null) && (!theNeedle.getMaterial() .isEmpty()) && (!theNeedle.getMaterial() .isBlank()))
 			{
-				theNeedle.setMaterial(material);
+				needle.setMaterial(theNeedle.getMaterial() );
 			}
 			
-			if ((type != null) && (!type.isEmpty()) || (!type.isBlank()))
+			if ((theNeedle.getType() != null) && (!theNeedle.getType().isEmpty()) && (!theNeedle.getType().isBlank()))
 			{
-				theNeedle.setType(type);
+				needle.setType(theNeedle.getType());
 			}
 			
-			if(length != 0)
+			if(theNeedle.getLength() != 0)
 			{
-				theNeedle.setLength(length);
+				needle.setLength(theNeedle.getLength());
 			}
 			
-			if ((usSize != null) && (!usSize.isEmpty()) || (!usSize.isBlank()))
+			if ((theNeedle.getUsSize() != null) && (!theNeedle.getUsSize().isEmpty()) && (!theNeedle.getUsSize().isBlank()))
 			{
-				theNeedle.setUsSize(usSize);
+				needle.setUsSize(theNeedle.getUsSize());
 			}
 			
-			if ((metricSize != null) && (!metricSize.isEmpty()) || (!metricSize.isBlank()))
+			if ((theNeedle.getMetricSize() != null) && (!theNeedle.getMetricSize().isEmpty()) && (!theNeedle.getMetricSize().isBlank()))
 			{
-				theNeedle.setMetricSize(metricSize);
+				needle.setMetricSize(theNeedle.getMetricSize());
 			}
 			
-			if(quantity != 0)
+			if(theNeedle.getQuantity() != 0)
 			{
-				theNeedle.setQuantity(quantity);
+				needle.setQuantity(theNeedle.getQuantity());
 			}
 			
-			theNewNeedle = dao.addNewHooksNeedlesOrCables(theNeedle);
+			
+			//System.out.println("the needle is " + needle.toString());
+			theNewNeedle = dao.addNewHooksNeedlesOrCables(needle);
+			System.out.println("the new needle is " + theNewNeedle.toString());
 			mv.addObject("needleOrHook", theNewNeedle);
-			mv.setViewName("show");
+			mv.setViewName("confirmNeedleOrHookInsert");
 			
 			
 		}

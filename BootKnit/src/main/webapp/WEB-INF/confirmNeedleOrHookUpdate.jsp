@@ -9,6 +9,12 @@
 <meta charset="UTF-8">
 <title>Kat's Knitting Stuff</title>
 <%@  include file="bootstraphead.jsp" %>
+<style>
+body { 
+	background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)),
+                  url("images/confetti.jpg");
+}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -27,13 +33,13 @@
 			The New Quantity is: ${needleOrHook.quantity}<br>
 		</c:when>
 		<c:otherwise>
-			Unable to update the needle!
+			Unable to update the the Needle, Hook, or Cable!
 		</c:otherwise>
 	</c:choose>
 	<br>
 	<br>
 	<form action="index.do">
-		<input type="submit" value="Back"/><br>
+		<input type="submit" value="Home"/><br>
 	</form>
 	</div>
 	</div>

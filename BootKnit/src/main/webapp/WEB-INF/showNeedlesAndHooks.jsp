@@ -9,6 +9,12 @@
 <meta charset="UTF-8">
 <title>Kat's Knitting Stuff</title>
 <%@  include file="bootstraphead.jsp" %>
+<style>
+body { 
+	background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)),
+                  url("images/allknittingcrochetstuff.jpg");
+}
+</style>
 </head>
 <body>
 <div class="container">

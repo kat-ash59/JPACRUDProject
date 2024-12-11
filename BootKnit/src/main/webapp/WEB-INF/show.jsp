@@ -5,10 +5,17 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>Kat's Knitting Stuff</title>
 <%@  include file="bootstraphead.jsp" %>
+<style>
+body { 
+	background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)),
+                  url("images/hooksneedlescables.jpg");
+}
+</style>
 </head>
 <body>
 

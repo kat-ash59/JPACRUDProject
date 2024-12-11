@@ -18,24 +18,35 @@ body {
 </head>
 <body>
 	<div class="container">
-	<h1>Needle, Hook or Cable Information</h1>
+	<h1>Needle, Hook, or Cable Information</h1>
 	<div class="row">
 	<c:choose>
-		<c:when test="${isSuccess }">
-			Successfully deleted the Needle, Hook, or Cable!
+		
+		<c:when test="${! empty needleOrHook }">
+			<h5>You have successfully inserted your Needle's information in the Database</h5><br>
+			The Needle, Hook or Cable Id is: ${needleOrHook.id}<br>
+			The Material is: ${needleOrHook.material}<br>
+			The Type is: ${needleOrHook.type}<br>
+			The Length is: ${needleOrHook.length}<br>
+			The Us Size is: ${needleOrHook.usSize}<br>
+			The Metric Size is: ${needleOrHook.metricSize}<br>
+			The Quantity is: ${needleOrHook.quantity}<br>
 		</c:when>
 		<c:otherwise>
-			Unable to delete the Needle, Hook, or Cable!
+			Unable to add the new Needle, Hook or Cable into the database!
 		</c:otherwise>
 	</c:choose>
+	<br>
+	<br>
 	<form action="index.do">
-			<input type="submit" value="Home"/>
+		<input type="submit" value="Home"/><br>
 	</form>
 	</div>
 	</div>
-	
-</body>
+</body>	
 <head>
+
+	
 <%@  include file="bootstrapfooter.jsp" %>
 </body>
 </html>
