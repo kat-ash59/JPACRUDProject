@@ -33,7 +33,7 @@ public class KnitDAOImpl implements KnitDAO {
 		String jpql = "Select needlesAndHooks from NeedlesAndHooks needlesAndHooks";
 		
 		needleAndHookList = em.createQuery(jpql, NeedlesAndHooks.class).getResultList();
-		System.out.println(needleAndHookList.toString());
+		
 		return needleAndHookList;
 	}
 	
