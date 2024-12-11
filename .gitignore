@@ -7,5 +7,5 @@ default
 .metadata
 .settings
 .gradle
-*.war 
+*.war
 *.bak

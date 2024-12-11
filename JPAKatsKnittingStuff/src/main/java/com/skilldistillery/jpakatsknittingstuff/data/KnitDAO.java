@@ -5,7 +5,7 @@ import java.util.List;
 import com.skilldistillery.jpakatsknittingstuff.entities.NeedlesAndHooks;
 
 
-public interface CRUDDAO 
+public interface KnitDAO 
 {
 	public NeedlesAndHooks addNewHooksNeedlesOrCables(NeedlesAndHooks newHookOrNeedle);
 

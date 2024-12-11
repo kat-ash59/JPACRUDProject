@@ -12,7 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Persistence;
 
-public class CRUDDAOImpl implements CRUDDAO 
+public class KnitDAOImpl implements KnitDAO 
 {
 	private EntityManagerFactory emf =
 	        Persistence.createEntityManagerFactory("KatsKnittingStuff");

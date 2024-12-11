@@ -1,6 +1,6 @@
 package com.skilldistillery.jpakatsknittingstuff.client;
 
-import com.skilldistillery.jpakatsknittingstuff.data.CRUDDAOImpl;
+import com.skilldistillery.jpakatsknittingstuff.data.KnitDAOImpl;
 import com.skilldistillery.jpakatsknittingstuff.entities.NeedlesAndHooks;
 
 import jakarta.persistence.EntityManagerFactory;
@@ -14,14 +14,16 @@ public class NeedlesAndHooksClient
 	public static void main(String[] args) 
 	{
 	   
-		CRUDDAOImpl dao = new CRUDDAOImpl();
+		KnitDAOImpl dao = new KnitDAOImpl();
 		NeedlesAndHooks initialHookOrNeedle = new NeedlesAndHooks();
 		NeedlesAndHooks newlyAddedHookOrNeedle =  new NeedlesAndHooks(); 
 		NeedlesAndHooks updatedHookOrNeedle =  new NeedlesAndHooks(); 
 		Boolean didItDelete = false;
 		int newId = 0;
 		int didItUpdate = 0;
-		  
+		
+		
+		// add
 		initialHookOrNeedle.setLength(9.5);
 		initialHookOrNeedle.setMaterial("bamboo");
 		initialHookOrNeedle.setUsSize("7");
@@ -32,7 +34,23 @@ public class NeedlesAndHooksClient
 		newlyAddedHookOrNeedle = dao.addNewHooksNeedlesOrCables(initialHookOrNeedle);
 			  
 		System.out.println("\n\nNewly added knitting Needle = " + newlyAddedHookOrNeedle.toString());
+		
+		/*
+		// Update
+		// need to add before update
+		initialHookOrNeedle.setLength(45);
+		initialHookOrNeedle.setMaterial("graphite");
+		initialHookOrNeedle.setUsSize("7");
+		initialHookOrNeedle.setMetricSize("4.5mm");
+		initialHookOrNeedle.setType("Circular");
+		initialHookOrNeedle.setQuantity(2);
 			  
+		newlyAddedHookOrNeedle = dao.addNewHooksNeedlesOrCables(initialHookOrNeedle);
+			  
+		System.out.println("\n\nNewly added knitting Needle = " + newlyAddedHookOrNeedle.toString());
+		
+			  
+
 			  
 		newId = newlyAddedHookOrNeedle.getId();
 		updatedHookOrNeedle = newlyAddedHookOrNeedle;
@@ -45,14 +63,18 @@ public class NeedlesAndHooksClient
 		{
 			System.out.println("\n\nnewly updated needle = " + updatedHookOrNeedle.toString());
 		}
-			  
-			  
+		*/  
+		
+		/*
+		// delete get id from db then add here
 		didItDelete = dao.destroyHooksNeedlesCables(newId);
 			  
 		if (didItDelete)
 		{
 			System.out.println("\n\nsuccessfully deleted needle");
 		}
+		
+		*/
 		
 		emf.close();
 	}

@@ -12,8 +12,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 
-import com.skilldistillery.jpakatsknittingstuff.data.CRUDDAO;
-import com.skilldistillery.jpakatsknittingstuff.data.CRUDDAOImpl;
+import com.skilldistillery.jpakatsknittingstuff.data.KnitDAO;
+import com.skilldistillery.jpakatsknittingstuff.data.KnitDAOImpl;
 import com.skilldistillery.jpakatsknittingstuff.entities.NeedlesAndHooks;
 
 import jakarta.persistence.EntityManager;
@@ -24,14 +24,14 @@ class CRUDDAOImplTest
 {
 	private static EntityManagerFactory emf;
 	private static EntityManager em;
-	private static CRUDDAO dao;
+	private static KnitDAO dao;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception 
 	{
 		emf = Persistence.createEntityManagerFactory("KatsKnittingStuff");
 		em = emf.createEntityManager();
-		dao = new CRUDDAOImpl();
+		dao = new KnitDAOImpl();
 	}
 
 	@AfterAll
