@@ -27,7 +27,6 @@ body {
 		<br>
 		<br>
 		<br>
-		
 		<strong>Get a list of all the knitting needles, crochet hooks and cables</strong>
 		<br>
 		<br>

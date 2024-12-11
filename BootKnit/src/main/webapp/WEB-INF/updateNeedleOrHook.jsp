@@ -55,7 +55,7 @@ body {
 				<br>
 				Current Length: ${needleOrHook.length } <br>
 				<label for="type">Length</label><br>
-				<input type="text" id="length" name="length" value="0"/>
+				<input type="number" id="length" name="length" value="0"/>
 				<br>
 				<br>
 				Current US Size: ${needleOrHook.usSize} <br>
